@@ -18,8 +18,14 @@ return { data }
 const showData = () => {
   fetchUsers(inputValue.value).then((res) => {
     console.log(res);
+
+    nameContainer.innerHTML = `Name: <span class="main__profile-value">${res.data.name}</span>`;
+
+    unContainer.innerHTML = `Username: <span class="main__profile-value">${res.data.login}</span>`;
+
+    reposContainer.innerHTML = `Repos: <span class="main__profile-value">${res.data.public_repos}</span>`;
   })
-}
+};
 
 
 searchButton.addEventListener("click", () => {
