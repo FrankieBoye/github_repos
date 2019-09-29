@@ -5,11 +5,8 @@ const unContainer = document.querySelector(".main__profile-username");
 const reposContainer = document.querySelector(".main__profile-repos");
 const urlContainer = document.querySelector(".main__profile-url");
 
-const client_id = "Iv1.e1fcdec707a6e340";
-const client_secret = "930612375a150aa3d890fbc6a7341ffa1c63feb2";
-
 const fetchUsers = async (user) => {
-  const api_call = await fetch(`https://api.github.com/users/${user}?client_id=${client_id}&client_secret=${client_secret}`);
+  const api_call = await fetch(`https://api.github.com/users/${user}`);
 
 const data = await api_call.json();
 return { data }
@@ -24,9 +21,11 @@ const showData = () => {
     unContainer.innerHTML = `Username: <span class="main__profile-value">${res.data.login}</span>`;
 
     reposContainer.innerHTML = `Repos: <span class="main__profile-value">${res.data.public_repos}</span>`;
+
+    urlContainer.innerHTML = `Dominant language: <span class="main__profile-value"><div>Couldn't complete this section</div></span>`;
+
   })
 };
-
 
 searchButton.addEventListener("click", () => {
   showData();
