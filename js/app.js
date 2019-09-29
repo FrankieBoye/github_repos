@@ -22,7 +22,7 @@ const showData = () => {
 
     reposContainer.innerHTML = `Repos: <span class="main__profile-value">${res.data.public_repos}</span>`;
 
-    urlContainer.innerHTML = `Dominant language: <span class="main__profile-value"><div>Couldn't complete this section</div></span>`;
+    urlContainer.innerHTML = `Dominant language: <span class="main__profile-value"><div>Section not yet completed</div></span>`;
 
   })
 };
